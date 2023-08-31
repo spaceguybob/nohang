@@ -26,15 +26,15 @@ else
 endif
 
 base:
-	install -p -d $(DESTDIR)$(SBINDIR)
+	install -p  $(DESTDIR)$(SBINDIR)
 	install -p -m0755 src/nohang $(DESTDIR)$(SBINDIR)/nohang
 
-	install -p -d $(DESTDIR)$(BINDIR)
+	install -p $(DESTDIR)$(BINDIR)
 	install -p -m0755 src/oom-sort $(DESTDIR)$(BINDIR)/oom-sort
 	install -p -m0755 src/psi-top $(DESTDIR)$(BINDIR)/psi-top
 	install -p -m0755 src/psi2log $(DESTDIR)$(BINDIR)/psi2log
 
-	install -p -d $(DESTDIR)$(SYSCONFDIR)/nohang
+	install -p  $(DESTDIR)$(SYSCONFDIR)/nohang
 
 	sed "s|:TARGET_DATADIR:|$(DATADIR)|" \
 		conf/nohang/nohang.conf.in > nohang.conf
@@ -45,7 +45,7 @@ base:
 	install -p -m0644 nohang.conf $(DESTDIR)$(SYSCONFDIR)/nohang/nohang.conf
 	install -p -m0644 nohang-desktop.conf $(DESTDIR)$(SYSCONFDIR)/nohang/nohang-desktop.conf
 
-	install -p -d $(DESTDIR)$(DATADIR)/nohang
+	install -p  $(DESTDIR)$(DATADIR)/nohang
 
 	install -p -m0644 nohang.conf $(DESTDIR)$(DATADIR)/nohang/nohang.conf
 	install -p -m0644 nohang-desktop.conf $(DESTDIR)$(DATADIR)/nohang/nohang-desktop.conf
@@ -57,15 +57,15 @@ base:
 	rm -fv nohang-desktop.conf
 	rm -fv version
 
-	install -p -d $(DESTDIR)/etc/logrotate.d
+	install -p  $(DESTDIR)/etc/logrotate.d
 	install -p -m0644 conf/logrotate.d/nohang $(DESTDIR)/etc/logrotate.d/nohang
 
-	install -p -d $(DESTDIR)$(MANDIR)/man1
+	install -p  $(DESTDIR)$(MANDIR)/man1
 	gzip -9cn man/oom-sort.1 > $(DESTDIR)$(MANDIR)/man1/oom-sort.1.gz
 	gzip -9cn man/psi-top.1 > $(DESTDIR)$(MANDIR)/man1/psi-top.1.gz
 	gzip -9cn man/psi2log.1 > $(DESTDIR)$(MANDIR)/man1/psi2log.1.gz
 
-	install -p -d $(DESTDIR)$(MANDIR)/man8
+	install -p  $(DESTDIR)$(MANDIR)/man8
 
 	sed "s|:SYSCONFDIR:|$(SYSCONFDIR)|g; s|:DATADIR:|$(DATADIR)|g" \
 		man/nohang.8 > nohang.8
@@ -73,7 +73,7 @@ base:
 	gzip -9cn nohang.8 > $(DESTDIR)$(MANDIR)/man8/nohang.8.gz
 	rm -fv nohang.8
 
-	install -p -d $(DESTDIR)$(DOCDIR)
+	install -p  $(DESTDIR)$(DOCDIR)
 	install -p -m0644 README.md $(DESTDIR)$(DOCDIR)/README.md
 	install -p -m0644 CHANGELOG.md $(DESTDIR)$(DOCDIR)/CHANGELOG.md
 
