@@ -4,7 +4,7 @@ SYSCONFDIR ?=     /usr/local/etc
 SYSTEMDUNITDIR ?= /usr/local/lib/systemd/system
 
 BINDIR ?=  $(PREFIX)/bin
-SBINDIR ?= $(PREFIX)/sbin
+SBINDIR ?= $(BINDIR)
 DATADIR ?= $(PREFIX)/share
 DOCDIR ?=  $(DATADIR)/doc/nohang
 MANDIR ?=  $(DATADIR)/man
